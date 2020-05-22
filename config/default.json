@@ -1,0 +1,10 @@
+{
+  "environment": "default",
+  "typeOrm": {
+    "host": "localhost",
+    "port": 5432,
+    "database": "users_api",
+    "username": "darya",
+    "password": "1234"
+  }
+}
