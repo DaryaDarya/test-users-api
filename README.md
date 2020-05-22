@@ -4,46 +4,15 @@
 
 Без аутентификации и авторизации, просто есть сущность User, у него может быть много Roles,  и одна Организация
 
-User
-
-——
-
-id
-
-name
-
-login
-
-password
-
-roles
-
-organisation
+```
+User(id, name, login, password, roles, organisation)
 
 
-Role
-
-_
-
-id
-
-name
-
-users
+Role(id, name, users)
 
 
-
-
-Organisation
-
-___
-
-id
-
-name
-
-users
-
+Organisation(id, name, users)
+```
 
 
 С использованием NestJS, TypeORM (любой поддерживаемой реляционной БД) написать API с swagger-документацией, которое реализует CRUD-операции над пользователями:
