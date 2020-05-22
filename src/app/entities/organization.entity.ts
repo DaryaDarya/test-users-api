@@ -1,4 +1,5 @@
-import { PrimaryGeneratedColumn, Entity, Column } from 'typeorm';
+import { PrimaryGeneratedColumn, Entity, Column, OneToMany } from 'typeorm';
+import User from './user.entity';
 
 @Entity({ name: 'organizations' })
 export default class Organization {
@@ -13,4 +14,7 @@ export default class Organization {
 
   @Column({ name: 'updated_at' })
   public updatedAt?: Date;
+
+  @OneToMany(() => User, user => user.organization)
+  public users: User[];
 }

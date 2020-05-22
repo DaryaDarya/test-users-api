@@ -11,7 +11,7 @@ import {
   BadRequestException,
 } from '@nestjs/common';
 import errors from 'src/helpers/errors';
-import { ApiOkResponse, OmitType, PickType, ApiBadRequestResponse, ApiNotFoundResponse, ApiTags } from '@nestjs/swagger';
+import { ApiOkResponse, OmitType, PickType, ApiBadRequestResponse, ApiNotFoundResponse, ApiTags, ApiCreatedResponse } from '@nestjs/swagger';
 import UsersService from './users.service';
 import { UserCreateDto, UserDto } from '../../dto/users.dto';
 
@@ -32,7 +32,7 @@ export default class UsersController {
   }
 
   @Post()
-  @ApiOkResponse({ type: UserDto })
+  @ApiCreatedResponse({ type: UserDto })
   @ApiBadRequestResponse()
   async create(@Body() user: UserCreateDto): Promise<UserDto> {
     try {
